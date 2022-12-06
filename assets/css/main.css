@@ -193,6 +193,13 @@ input, select, textarea {
 		margin-bottom: 2em;
 	}
 
+	#smallerText 
+	{
+		font-size: 0.9em;
+		line-height: 1.4em;
+		margin-bottom: 1em;
+	}
+
 /* Container */
 
 	.container {

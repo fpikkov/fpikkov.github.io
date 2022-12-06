@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>My Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="shortcut icon" href="TemplateData/favicon.ico">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">Pinkball</a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li class="current"><a href="games.html">Games</a></li>
+								<li><a href="music.html">Music</a></li>
+								<li><a href="3d.html">3D</a></li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row aln-center">
+							<div class="unity-desktop">
+								<canvas id="unity-canvas" width=960 height=600></canvas>
+							</div>
+						</div>
+					  </div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+								<section>
+									<header>
+										<h2>Contact information</h2>
+									</header>
+									<ul class="social">
+										<li><a class="icon brands fa-facebook-f" href="https://www.facebook.com/fred.pikkov/"><span class="label">Facebook</span></a></li>
+										<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/fred-pikkov-5a719424b/"><span class="label">LinkedIn</span></a></li>
+									</ul>
+									<ul class="contact">
+										<li>
+											<h3>Mail</h3>
+											<p><a href="fpikkov@gmail.com">fpikkov@gmail.com</a></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-12">
+
+								<!-- Copyright -->
+									<div id="copyright">
+										<ul class="links">
+											<li>&copy; Fred Pikkov. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="Build/Pinkball Web.loader.js"></script>
+
+			<script>
+				if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+       				// Mobile device style: fill the whole browser client area with the game canvas:
+       				var meta = document.createElement('meta');
+       				meta.name = 'viewport';
+       				meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+       				document.getElementsByTagName('head')[0].appendChild(meta);
+
+       				var canvas = document.querySelector("#unity-canvas");
+       				canvas.style.width = "100%";
+       				canvas.style.height = "100%";
+       				canvas.style.position = "fixed";
+
+       				document.body.style.textAlign = "left";
+      			}
+
+      			createUnityInstance(document.querySelector("#unity-canvas"), {
+        		dataUrl: "Build/Pinkball Web.data.unityweb",
+        		frameworkUrl: "Build/Pinkball Web.framework.js.unityweb",
+        		codeUrl: "Build/Pinkball Web.wasm.unityweb",
+        		streamingAssetsUrl: "StreamingAssets",
+        		companyName: "Fred Pikkov",
+        		productName: "Pinkball",
+        		productVersion: "1.0",
+        		// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        		// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      			});
+				document.body.appendChild(script);
+			  </script>
+
+	</body>
+</html>
